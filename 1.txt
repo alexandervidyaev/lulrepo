@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-ver 1.0
-ver 2.0
-ver 3.0
-=======
-ver 1.0
->>>>>>> parent of 38ea66f (das ver2.0)
