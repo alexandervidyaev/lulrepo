@@ -1,0 +1,15 @@
+По ролям:
+НА "DC" Устанавливать: XenApp, Licence, ReceiverStorefront (?) -> XML Service IIS Integration, SSO Plug-in
+На втором и более TS Server устанавливать XenApp, XML Service IIS Integration
+На другой сервер устанавливаем только роль web interface. На нем Create XenApp Web
+
+На ADDS чтоб работало SSO в Citrix AppCenter: Cancel the wizard and start the XenApp 6.5 CD on your domain controller. 
+Browse to Manually install components -> Server Components -> Additional Features -> Single Sign-On -> Central Store -> Active Directory -> 
+Step 1: Extend Active Directory. After completing the first step, run Step 2: Create Central Store
+
+
+При XML service port и http transport type и ssl relay port (443, нельзя поменять) в Citrix Web Interface Manager логинится нормально, 
+без настройки всяких политик Citrix'а. Правда нужно вписывать домен (NetBios имя) при аутентификации.
+Чтобы не вписывать, идем в Citrix Web Interface Manager, выбираем Auth Methods -> Properties -> Auth. Type -> тут ставим
+Domain Username Only, тут же кнопочка Settings, и добавляем Preuploaded Domain (тоже Netbios имя). Domain Display
+Ставим Hide, чтобы не было лишних полей при аутентификации в веб морде
